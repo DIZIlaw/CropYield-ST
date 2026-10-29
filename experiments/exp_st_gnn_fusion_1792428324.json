@@ -1,0 +1,331 @@
+{
+  "experiment_id": "exp_st_gnn_fusion_1792428324",
+  "model_type": "st_gnn",
+  "feature_set": "fusion",
+  "features": [
+    "ndvi",
+    "evi",
+    "ndre",
+    "ndwi",
+    "sar_vv_linear",
+    "sar_vh_linear",
+    "sar_vh_vv_ratio",
+    "sar_rvi",
+    "sar_vv_db",
+    "sar_vh_db"
+  ],
+  "epochs": 20,
+  "duration_sec": 1.92,
+  "train_metrics": {
+    "n_samples": 22,
+    "rmse": 1.0534,
+    "mae": 0.8544,
+    "r2": 0.0061,
+    "mape_percent": 27.21,
+    "mean_actual": 4.06,
+    "mean_predicted": 3.983,
+    "residual_mean": -0.0766,
+    "residual_std": 1.0506,
+    "max_overprediction": 2.0947,
+    "max_underprediction": -1.7128,
+    "residuals": [
+      -0.7075,
+      -1.7128,
+      -0.5519,
+      -1.4319,
+      1.4364,
+      -0.7846,
+      -0.7764,
+      -0.4497,
+      -0.4199,
+      -0.4086,
+      1.8673,
+      -0.0037,
+      1.5038,
+      -0.0502,
+      -0.6431,
+      -0.4513,
+      -0.9191,
+      1.6534,
+      -0.6296,
+      2.0947,
+      -0.2497,
+      -0.0506
+    ],
+    "y_true": [
+      4.7,
+      5.72,
+      4.54,
+      5.44,
+      2.56,
+      4.78,
+      4.76,
+      4.44,
+      4.4,
+      4.39,
+      2.12,
+      3.97,
+      2.48,
+      4.02,
+      4.62,
+      4.42,
+      4.91,
+      2.31,
+      4.62,
+      1.87,
+      4.22,
+      4.02
+    ],
+    "y_pred": [
+      3.99,
+      4.01,
+      3.99,
+      4.01,
+      4.0,
+      4.0,
+      3.98,
+      3.99,
+      3.98,
+      3.98,
+      3.99,
+      3.97,
+      3.98,
+      3.97,
+      3.98,
+      3.97,
+      3.99,
+      3.96,
+      3.99,
+      3.96,
+      3.97,
+      3.97
+    ]
+  },
+  "val_metrics": {
+    "n_samples": 5,
+    "rmse": 0.8693,
+    "mae": 0.653,
+    "r2": -0.0141,
+    "mape_percent": 22.28,
+    "mean_actual": 3.89,
+    "mean_predicted": 3.974,
+    "residual_mean": 0.0843,
+    "residual_std": 0.8652,
+    "max_overprediction": 1.7327,
+    "max_underprediction": -0.6495,
+    "residuals": [
+      -0.2384,
+      -0.6495,
+      -0.5341,
+      0.1106,
+      1.7327
+    ],
+    "y_true": [
+      4.21,
+      4.63,
+      4.51,
+      3.85,
+      2.25
+    ],
+    "y_pred": [
+      3.97,
+      3.98,
+      3.98,
+      3.96,
+      3.98
+    ]
+  },
+  "test_metrics": {
+    "n_samples": 9,
+    "rmse": 1.2967,
+    "mae": 1.066,
+    "r2": -0.0298,
+    "mape_percent": 42.41,
+    "mean_actual": 3.714,
+    "mean_predicted": 3.978,
+    "residual_mean": 0.2636,
+    "residual_std": 1.2696,
+    "max_overprediction": 2.1696,
+    "max_underprediction": -1.4173,
+    "residuals": [
+      2.011,
+      -0.1985,
+      -0.6958,
+      -0.3119,
+      -0.4053,
+      2.1696,
+      -1.4173,
+      -0.5821,
+      1.8023
+    ],
+    "y_true": [
+      1.95,
+      4.16,
+      4.69,
+      4.28,
+      4.38,
+      1.79,
+      5.42,
+      4.57,
+      2.19
+    ],
+    "y_pred": [
+      3.96,
+      3.96,
+      3.99,
+      3.97,
+      3.97,
+      3.96,
+      4.0,
+      3.99,
+      3.99
+    ]
+  },
+  "loss_history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.00144,
+      "val_loss": 0.71348
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.96247,
+      "val_loss": 0.73713
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.99115,
+      "val_loss": 0.69776
+    },
+    {
+      "epoch": 4,
+      "train_loss": 1.02672,
+      "val_loss": 0.67682
+    },
+    {
+      "epoch": 5,
+      "train_loss": 1.01339,
+      "val_loss": 0.67833
+    },
+    {
+      "epoch": 6,
+      "train_loss": 1.02363,
+      "val_loss": 0.71633
+    },
+    {
+      "epoch": 7,
+      "train_loss": 1.06952,
+      "val_loss": 0.71342
+    },
+    {
+      "epoch": 8,
+      "train_loss": 1.02873,
+      "val_loss": 0.6901
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.98772,
+      "val_loss": 0.67685
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.94012,
+      "val_loss": 0.67911
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.97517,
+      "val_loss": 0.70087
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.9165,
+      "val_loss": 0.76052
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.92518,
+      "val_loss": 0.74524
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.95819,
+      "val_loss": 0.7258
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.87485,
+      "val_loss": 0.77293
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.80631,
+      "val_loss": 0.80459
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.76233,
+      "val_loss": 0.75821
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.70412,
+      "val_loss": 0.91862
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.87278,
+      "val_loss": 0.79683
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.65992,
+      "val_loss": 0.76299
+    }
+  ],
+  "split": {
+    "train_count": 22,
+    "val_count": 5,
+    "test_count": 9
+  },
+  "predictions": {
+    "PARCEL_001": 3.99,
+    "PARCEL_002": 3.99,
+    "PARCEL_003": 3.98,
+    "PARCEL_004": 3.98,
+    "PARCEL_005": 3.99,
+    "PARCEL_006": 3.98,
+    "PARCEL_007": 4.01,
+    "PARCEL_008": 4.0,
+    "PARCEL_009": 3.98,
+    "PARCEL_010": 3.97,
+    "PARCEL_011": 3.97,
+    "PARCEL_012": 3.96,
+    "PARCEL_013": 4.01,
+    "PARCEL_014": 3.99,
+    "PARCEL_015": 3.97,
+    "PARCEL_016": 3.96,
+    "PARCEL_017": 3.96,
+    "PARCEL_018": 3.97,
+    "PARCEL_019": 4.0,
+    "PARCEL_020": 3.99,
+    "PARCEL_021": 3.99,
+    "PARCEL_022": 3.97,
+    "PARCEL_023": 3.96,
+    "PARCEL_024": 3.96,
+    "PARCEL_025": 3.98,
+    "PARCEL_026": 3.98,
+    "PARCEL_027": 3.97,
+    "PARCEL_028": 3.98,
+    "PARCEL_029": 3.97,
+    "PARCEL_030": 3.99,
+    "PARCEL_031": 3.97,
+    "PARCEL_032": 3.96,
+    "PARCEL_033": 3.98,
+    "PARCEL_034": 3.99,
+    "PARCEL_035": 4.0,
+    "PARCEL_036": 3.99
+  },
+  "save_dir": "models\\exp_st_gnn_fusion_1792428324",
+  "provenance": "synthetic_demonstration"
+}

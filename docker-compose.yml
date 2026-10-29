@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  cropyield-st:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cropyield-st:latest
+    container_name: cropyield_st_app
+    ports:
+      - "8000:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+    restart: unless-stopped

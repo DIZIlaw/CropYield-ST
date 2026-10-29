@@ -1,0 +1,442 @@
+{
+  "experiment_id": "ablation_fusion___temporal_modeling_no_graph",
+  "model_type": "pure_temporal_rnn",
+  "feature_set": "fusion",
+  "features": [
+    "ndvi",
+    "evi",
+    "ndre",
+    "ndwi",
+    "sar_vv_linear",
+    "sar_vh_linear",
+    "sar_vh_vv_ratio",
+    "sar_rvi",
+    "sar_vv_db",
+    "sar_vh_db"
+  ],
+  "epochs": 40,
+  "duration_sec": 0.65,
+  "train_metrics": {
+    "n_samples": 22,
+    "rmse": 0.7278,
+    "mae": 0.5422,
+    "r2": 0.427,
+    "mape_percent": 17.54,
+    "mean_actual": 4.073,
+    "mean_predicted": 4.224,
+    "residual_mean": 0.1506,
+    "residual_std": 0.712,
+    "max_overprediction": 1.6936,
+    "max_underprediction": -0.8068,
+    "residuals": [
+      0.3082,
+      -0.8068,
+      -0.2274,
+      -0.0403,
+      1.2894,
+      -0.3007,
+      -0.784,
+      -0.3917,
+      -0.063,
+      0.0769,
+      1.6936,
+      -0.4543,
+      1.3814,
+      -0.1621,
+      -0.4608,
+      -0.0052,
+      -0.0847,
+      0.8729,
+      0.5023,
+      1.3323,
+      -0.5269,
+      0.163
+    ],
+    "y_true": [
+      4.4,
+      5.82,
+      4.64,
+      5.14,
+      2.76,
+      4.88,
+      4.86,
+      4.54,
+      4.1,
+      4.09,
+      2.32,
+      4.07,
+      2.68,
+      4.12,
+      4.72,
+      4.52,
+      4.61,
+      2.51,
+      4.32,
+      2.07,
+      4.32,
+      4.12
+    ],
+    "y_pred": [
+      4.71,
+      5.01,
+      4.41,
+      5.1,
+      4.05,
+      4.58,
+      4.08,
+      4.15,
+      4.04,
+      4.17,
+      4.01,
+      3.62,
+      4.06,
+      3.96,
+      4.26,
+      4.51,
+      4.53,
+      3.38,
+      4.82,
+      3.4,
+      3.79,
+      4.28
+    ]
+  },
+  "val_metrics": {
+    "n_samples": 5,
+    "rmse": 1.0407,
+    "mae": 0.7712,
+    "r2": -0.7643,
+    "mape_percent": 25.88,
+    "mean_actual": 3.85,
+    "mean_predicted": 4.141,
+    "residual_mean": 0.2911,
+    "residual_std": 0.9992,
+    "max_overprediction": 2.1671,
+    "max_underprediction": -0.4087,
+    "residuals": [
+      -0.4079,
+      -0.3838,
+      -0.4087,
+      0.4888,
+      2.1671
+    ],
+    "y_true": [
+      4.31,
+      4.33,
+      4.61,
+      3.55,
+      2.45
+    ],
+    "y_pred": [
+      3.9,
+      3.95,
+      4.2,
+      4.04,
+      4.62
+    ]
+  },
+  "test_metrics": {
+    "n_samples": 9,
+    "rmse": 1.0509,
+    "mae": 0.7637,
+    "r2": 0.2531,
+    "mape_percent": 29.83,
+    "mean_actual": 3.803,
+    "mean_predicted": 4.166,
+    "residual_mean": 0.3631,
+    "residual_std": 0.9862,
+    "max_overprediction": 2.3502,
+    "max_underprediction": -0.5937,
+    "residuals": [
+      1.3282,
+      -0.4485,
+      -0.1805,
+      -0.0928,
+      -0.2539,
+      1.3923,
+      -0.5937,
+      -0.2331,
+      2.3502
+    ],
+    "y_true": [
+      2.15,
+      4.26,
+      4.79,
+      4.38,
+      4.08,
+      1.99,
+      5.52,
+      4.67,
+      2.39
+    ],
+    "y_pred": [
+      3.48,
+      3.81,
+      4.61,
+      4.29,
+      3.83,
+      3.38,
+      4.93,
+      4.44,
+      4.74
+    ]
+  },
+  "conformal_uncertainty": {
+    "cal_residuals_count": 5,
+    "test_samples_count": 9,
+    "conformal_q95": 2.167,
+    "empirical_test_coverage_pct": 88.9,
+    "mean_interval_width": 4.33,
+    "is_statistically_validated": false,
+    "warnings": [
+      "Small-sample conformal calibration (m_cal=5, n_test=9). Finite-sample guarantee provides conservative interval (width=4.33 t/ha); asymptotic coverage guarantees require larger multi-region parcel sets (n >= 50)."
+    ]
+  },
+  "loss_history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.02408,
+      "val_loss": 0.98211
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.06239,
+      "val_loss": 0.73922
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.96958,
+      "val_loss": 0.70627
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.96218,
+      "val_loss": 0.78079
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.96969,
+      "val_loss": 0.81569
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.94267,
+      "val_loss": 0.75571
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.95733,
+      "val_loss": 0.74273
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.9429,
+      "val_loss": 0.76772
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.86913,
+      "val_loss": 0.83398
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.89922,
+      "val_loss": 0.81892
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.80369,
+      "val_loss": 0.86378
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.82247,
+      "val_loss": 0.99774
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.73869,
+      "val_loss": 1.01675
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.61646,
+      "val_loss": 1.17189
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.54974,
+      "val_loss": 1.19046
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.48872,
+      "val_loss": 1.23251
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.51508,
+      "val_loss": 1.38923
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.43148,
+      "val_loss": 1.6438
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.44762,
+      "val_loss": 1.70322
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.42321,
+      "val_loss": 1.624
+    },
+    {
+      "epoch": 21,
+      "train_loss": 0.45562,
+      "val_loss": 1.65049
+    },
+    {
+      "epoch": 22,
+      "train_loss": 0.28679,
+      "val_loss": 1.66695
+    },
+    {
+      "epoch": 23,
+      "train_loss": 0.28646,
+      "val_loss": 1.64886
+    },
+    {
+      "epoch": 24,
+      "train_loss": 0.30838,
+      "val_loss": 1.5339
+    },
+    {
+      "epoch": 25,
+      "train_loss": 0.27732,
+      "val_loss": 1.42114
+    },
+    {
+      "epoch": 26,
+      "train_loss": 0.20606,
+      "val_loss": 1.40215
+    },
+    {
+      "epoch": 27,
+      "train_loss": 0.22956,
+      "val_loss": 1.36883
+    },
+    {
+      "epoch": 28,
+      "train_loss": 0.2926,
+      "val_loss": 1.34787
+    },
+    {
+      "epoch": 29,
+      "train_loss": 0.23861,
+      "val_loss": 1.35074
+    },
+    {
+      "epoch": 30,
+      "train_loss": 0.21501,
+      "val_loss": 1.34909
+    },
+    {
+      "epoch": 31,
+      "train_loss": 0.17629,
+      "val_loss": 1.32485
+    },
+    {
+      "epoch": 32,
+      "train_loss": 0.17959,
+      "val_loss": 1.28823
+    },
+    {
+      "epoch": 33,
+      "train_loss": 0.18248,
+      "val_loss": 1.34245
+    },
+    {
+      "epoch": 34,
+      "train_loss": 0.13345,
+      "val_loss": 1.50369
+    },
+    {
+      "epoch": 35,
+      "train_loss": 0.17099,
+      "val_loss": 1.57105
+    },
+    {
+      "epoch": 36,
+      "train_loss": 0.36616,
+      "val_loss": 1.47045
+    },
+    {
+      "epoch": 37,
+      "train_loss": 0.15829,
+      "val_loss": 1.3712
+    },
+    {
+      "epoch": 38,
+      "train_loss": 0.11481,
+      "val_loss": 1.29605
+    },
+    {
+      "epoch": 39,
+      "train_loss": 0.12142,
+      "val_loss": 1.26181
+    },
+    {
+      "epoch": 40,
+      "train_loss": 0.12835,
+      "val_loss": 1.27957
+    }
+  ],
+  "split": {
+    "train_count": 22,
+    "val_count": 5,
+    "test_count": 9
+  },
+  "predictions": {
+    "PARCEL_001": 4.71,
+    "PARCEL_002": 4.41,
+    "PARCEL_003": 4.08,
+    "PARCEL_004": 4.06,
+    "PARCEL_005": 4.82,
+    "PARCEL_006": 4.2,
+    "PARCEL_007": 5.01,
+    "PARCEL_008": 4.05,
+    "PARCEL_009": 4.17,
+    "PARCEL_010": 4.51,
+    "PARCEL_011": 4.28,
+    "PARCEL_012": 3.48,
+    "PARCEL_013": 5.1,
+    "PARCEL_014": 4.15,
+    "PARCEL_015": 3.96,
+    "PARCEL_016": 3.4,
+    "PARCEL_017": 4.04,
+    "PARCEL_018": 4.29,
+    "PARCEL_019": 4.58,
+    "PARCEL_020": 4.01,
+    "PARCEL_021": 4.53,
+    "PARCEL_022": 3.9,
+    "PARCEL_023": 3.81,
+    "PARCEL_024": 3.38,
+    "PARCEL_025": 4.04,
+    "PARCEL_026": 4.26,
+    "PARCEL_027": 3.79,
+    "PARCEL_028": 4.62,
+    "PARCEL_029": 3.83,
+    "PARCEL_030": 4.44,
+    "PARCEL_031": 3.62,
+    "PARCEL_032": 3.38,
+    "PARCEL_033": 3.95,
+    "PARCEL_034": 4.61,
+    "PARCEL_035": 4.93,
+    "PARCEL_036": 4.74
+  },
+  "save_dir": "models\\ablation_fusion___temporal_modeling_no_graph",
+  "provenance": "synthetic_demonstration"
+}

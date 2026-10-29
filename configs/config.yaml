@@ -1,0 +1,87 @@
+# CropYield-ST Configuration File
+# Multi-Spectral Satellite & SAR Fusion for Hyperlocal Crop Yield Forecasting
+
+project:
+  name: "CropYield-ST"
+  version: "0.1.0"
+  description: "Hyperlocal Crop Yield Forecasting Using Spatio-Temporal Graph Neural Networks"
+  random_seed: 42
+
+study_area:
+  name: "Des Moines Agricultural Cluster, Iowa (USDA Corn Belt / Prototype Pilot)"
+  region_id: "US_IA_DM_01"
+  crop: "Maize" # Initial primary crop
+  center_lat: 41.5868
+  center_lon: -93.6250
+  bbox: [-93.85, 41.45, -93.40, 41.75] # [min_lon, min_lat, max_lon, max_lat]
+  season: "2024_Kharif_Summer"
+  start_date: "2024-05-01"
+  end_date: "2024-09-30"
+  expected_harvest_date: "2024-10-15"
+
+sentinel2:
+  collection: "COPERNICUS/S2_SR_HARMONIZED"
+  cloud_threshold_percent: 20
+  bands:
+    blue: "B2"
+    green: "B3"
+    red: "B4"
+    red_edge_1: "B5"
+    red_edge_2: "B6"
+    red_edge_3: "B7"
+    nir: "B8"
+    nir_narrow: "B8A"
+    swir_1: "B11"
+    swir_2: "B12"
+    scl: "SCL"
+  spatial_resolution_m: 10
+  cloud_mask_classes: [3, 8, 9, 10, 11] # SCL: cloud shadows, med/high prob clouds, cirrus, snow
+
+sentinel1:
+  collection: "COPERNICUS/S1_GRD"
+  polarizations: ["VV", "VH"]
+  instrument_mode: "IW"
+  orbit_pass: "DESCENDING"
+  spatial_resolution_m: 10
+
+indices:
+  ndvi:
+    formula: "(NIR - RED) / (NIR + RED)"
+    valid_range: [-1.0, 1.0]
+  ndre:
+    formula: "(NIR - RED_EDGE_1) / (NIR + RED_EDGE_1)"
+    valid_range: [-1.0, 1.0]
+  evi:
+    formula: "2.5 * (NIR - RED) / (NIR + 6 * RED - 7.5 * BLUE + 1)"
+    valid_range: [-1.0, 1.5]
+  ndwi:
+    formula: "(GREEN - NIR) / (GREEN + NIR)"
+    valid_range: [-1.0, 1.0]
+
+temporal:
+  interval_days: 7
+  aggregation_strategy: "weekly_median"
+  max_interpolation_gap_days: 14
+
+graph:
+  knn_neighbors: 6
+  distance_threshold_km: 15.0
+  edge_strategy: "knn"
+
+training:
+  batch_size: 16
+  epochs: 50
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  early_stopping_patience: 10
+  device: "auto" # "cuda" if available else "cpu"
+
+paths:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  labels_dir: "data/labels"
+  sample_data_dir: "data/sample"
+  figures_dir: "outputs/figures"
+  metrics_dir: "outputs/metrics"
+  predictions_dir: "outputs/predictions"
+  models_dir: "models"

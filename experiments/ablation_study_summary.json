@@ -1,0 +1,80 @@
+{
+  "study_name": "CropYield-ST Multi-Modal & Spatio-Temporal Ablation",
+  "sample_count": 36,
+  "provenance": "synthetic_demonstration",
+  "is_demonstration": true,
+  "evaluation_protocol": "Spatial block holdout partition; strictly non-overlapping train, calibration, and test fields.",
+  "split": {
+    "train_samples": 22,
+    "val_samples": 5,
+    "test_samples": 9
+  },
+  "results": [
+    {
+      "name": "Mean-Yield Baseline",
+      "model_type": "mean_baseline",
+      "feature_set": "none",
+      "description": "Predicts global training mean yield without satellite observations as naive baseline reference.",
+      "test_rmse": 1.2456,
+      "test_mae": 0.9945,
+      "test_r2": -0.0492,
+      "test_mape": 36.67,
+      "duration_sec": 0.17
+    },
+    {
+      "name": "Optical Features Only",
+      "model_type": "st_gnn",
+      "feature_set": "optical_only",
+      "description": "Sentinel-2 MSI spectral indices (NDVI, EVI, NDRE, NDWI) with ST-GNN.",
+      "test_rmse": 1.0941,
+      "test_mae": 0.8558,
+      "test_r2": 0.1905,
+      "test_mape": 32.37,
+      "duration_sec": 0.84
+    },
+    {
+      "name": "SAR Features Only",
+      "model_type": "st_gnn",
+      "feature_set": "sar_only",
+      "description": "Sentinel-1 C-band SAR backscatter (VV, VH, RVI, ratios) with ST-GNN.",
+      "test_rmse": 1.101,
+      "test_mae": 0.9753,
+      "test_r2": 0.1802,
+      "test_mape": 34.09,
+      "duration_sec": 0.69
+    },
+    {
+      "name": "Optical + SAR Fusion (XGBoost)",
+      "model_type": "xgboost",
+      "feature_set": "fusion",
+      "description": "Dual-sensor fusion using gradient boosted decision trees on seasonal aggregates.",
+      "test_rmse": 0.9398,
+      "test_mae": 0.623,
+      "test_r2": 0.4027,
+      "test_mape": 20.42,
+      "duration_sec": 0.4
+    },
+    {
+      "name": "Fusion + Temporal Modeling (No Graph)",
+      "model_type": "pure_temporal_rnn",
+      "feature_set": "fusion",
+      "description": "Dual-sensor fusion with temporal GRU encoder, without neighborhood graph convolution.",
+      "test_rmse": 1.0509,
+      "test_mae": 0.7637,
+      "test_r2": 0.2531,
+      "test_mape": 29.83,
+      "duration_sec": 0.65
+    },
+    {
+      "name": "CropYield-ST (Full ST-GNN)",
+      "model_type": "st_gnn",
+      "feature_set": "fusion",
+      "description": "Proposed architecture: Dual-sensor fusion + Temporal GRU + Parcel Adjacency GCN.",
+      "test_rmse": 1.0558,
+      "test_mae": 0.8441,
+      "test_r2": 0.2462,
+      "test_mape": 31.34,
+      "duration_sec": 0.93
+    }
+  ]
+}

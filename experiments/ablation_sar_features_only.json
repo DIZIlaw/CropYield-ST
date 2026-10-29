@@ -1,0 +1,438 @@
+{
+  "experiment_id": "ablation_sar_features_only",
+  "model_type": "st_gnn",
+  "feature_set": "sar_only",
+  "features": [
+    "sar_vv_linear",
+    "sar_vh_linear",
+    "sar_vh_vv_ratio",
+    "sar_rvi",
+    "sar_vv_db",
+    "sar_vh_db"
+  ],
+  "epochs": 40,
+  "duration_sec": 0.69,
+  "train_metrics": {
+    "n_samples": 22,
+    "rmse": 0.8858,
+    "mae": 0.7175,
+    "r2": 0.1511,
+    "mape_percent": 22.18,
+    "mean_actual": 4.073,
+    "mean_predicted": 4.055,
+    "residual_mean": -0.0184,
+    "residual_std": 0.8856,
+    "max_overprediction": 1.7856,
+    "max_underprediction": -1.2159,
+    "residuals": [
+      -0.1569,
+      -1.2159,
+      -0.4587,
+      -0.5285,
+      1.6728,
+      -0.4374,
+      -0.8561,
+      -0.4644,
+      -0.1483,
+      -0.0969,
+      1.7856,
+      -0.4019,
+      1.3954,
+      -0.1587,
+      -0.8631,
+      -0.5858,
+      -0.4408,
+      1.2646,
+      -0.3364,
+      1.5721,
+      -0.6509,
+      -0.2947
+    ],
+    "y_true": [
+      4.4,
+      5.82,
+      4.64,
+      5.14,
+      2.76,
+      4.88,
+      4.86,
+      4.54,
+      4.1,
+      4.09,
+      2.32,
+      4.07,
+      2.68,
+      4.12,
+      4.72,
+      4.52,
+      4.61,
+      2.51,
+      4.32,
+      2.07,
+      4.32,
+      4.12
+    ],
+    "y_pred": [
+      4.24,
+      4.6,
+      4.18,
+      4.61,
+      4.43,
+      4.44,
+      4.0,
+      4.08,
+      3.95,
+      3.99,
+      4.11,
+      3.67,
+      4.08,
+      3.96,
+      3.86,
+      3.93,
+      4.17,
+      3.77,
+      3.98,
+      3.64,
+      3.67,
+      3.83
+    ]
+  },
+  "val_metrics": {
+    "n_samples": 5,
+    "rmse": 0.834,
+    "mae": 0.6655,
+    "r2": -0.1328,
+    "mape_percent": 21.03,
+    "mean_actual": 3.85,
+    "mean_predicted": 3.878,
+    "residual_mean": 0.0285,
+    "residual_std": 0.8335,
+    "max_overprediction": 1.6051,
+    "max_underprediction": -0.631,
+    "residuals": [
+      -0.5896,
+      -0.3719,
+      -0.631,
+      0.1298,
+      1.6051
+    ],
+    "y_true": [
+      4.31,
+      4.33,
+      4.61,
+      3.55,
+      2.45
+    ],
+    "y_pred": [
+      3.72,
+      3.96,
+      3.98,
+      3.68,
+      4.06
+    ]
+  },
+  "test_metrics": {
+    "n_samples": 9,
+    "rmse": 1.101,
+    "mae": 0.9753,
+    "r2": 0.1802,
+    "mape_percent": 34.09,
+    "mean_actual": 3.803,
+    "mean_predicted": 3.906,
+    "residual_mean": 0.1026,
+    "residual_std": 1.0962,
+    "max_overprediction": 1.7065,
+    "max_underprediction": -1.1987,
+    "residuals": [
+      1.44,
+      -0.4601,
+      -0.5738,
+      -0.6783,
+      -0.3243,
+      1.7065,
+      -1.1987,
+      -0.6916,
+      1.7038
+    ],
+    "y_true": [
+      2.15,
+      4.26,
+      4.79,
+      4.38,
+      4.08,
+      1.99,
+      5.52,
+      4.67,
+      2.39
+    ],
+    "y_pred": [
+      3.59,
+      3.8,
+      4.22,
+      3.7,
+      3.76,
+      3.7,
+      4.32,
+      3.98,
+      4.09
+    ]
+  },
+  "conformal_uncertainty": {
+    "cal_residuals_count": 5,
+    "test_samples_count": 9,
+    "conformal_q95": 1.605,
+    "empirical_test_coverage_pct": 77.8,
+    "mean_interval_width": 3.21,
+    "is_statistically_validated": false,
+    "warnings": [
+      "Small-sample conformal calibration (m_cal=5, n_test=9). Finite-sample guarantee provides conservative interval (width=3.21 t/ha); asymptotic coverage guarantees require larger multi-region parcel sets (n >= 50)."
+    ]
+  },
+  "loss_history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.02202,
+      "val_loss": 0.67434
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.05903,
+      "val_loss": 0.76936
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.03738,
+      "val_loss": 0.74795
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.93325,
+      "val_loss": 0.69409
+    },
+    {
+      "epoch": 5,
+      "train_loss": 1.0419,
+      "val_loss": 0.73883
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.94821,
+      "val_loss": 0.76101
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.93752,
+      "val_loss": 0.74239
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.9699,
+      "val_loss": 0.70335
+    },
+    {
+      "epoch": 9,
+      "train_loss": 1.07567,
+      "val_loss": 0.70086
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.97127,
+      "val_loss": 0.70366
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.91672,
+      "val_loss": 0.74469
+    },
+    {
+      "epoch": 12,
+      "train_loss": 1.05028,
+      "val_loss": 0.78641
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.92805,
+      "val_loss": 0.75506
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.95267,
+      "val_loss": 0.71203
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.96014,
+      "val_loss": 0.7022
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.87797,
+      "val_loss": 0.70669
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.88929,
+      "val_loss": 0.72183
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.90777,
+      "val_loss": 0.76812
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.97585,
+      "val_loss": 0.79176
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.89451,
+      "val_loss": 0.78139
+    },
+    {
+      "epoch": 21,
+      "train_loss": 0.9234,
+      "val_loss": 0.76699
+    },
+    {
+      "epoch": 22,
+      "train_loss": 0.91765,
+      "val_loss": 0.78159
+    },
+    {
+      "epoch": 23,
+      "train_loss": 0.98687,
+      "val_loss": 0.80942
+    },
+    {
+      "epoch": 24,
+      "train_loss": 0.86071,
+      "val_loss": 0.82249
+    },
+    {
+      "epoch": 25,
+      "train_loss": 0.85199,
+      "val_loss": 0.84018
+    },
+    {
+      "epoch": 26,
+      "train_loss": 0.91986,
+      "val_loss": 0.83434
+    },
+    {
+      "epoch": 27,
+      "train_loss": 0.90882,
+      "val_loss": 0.83062
+    },
+    {
+      "epoch": 28,
+      "train_loss": 0.92994,
+      "val_loss": 0.82142
+    },
+    {
+      "epoch": 29,
+      "train_loss": 0.92053,
+      "val_loss": 0.80634
+    },
+    {
+      "epoch": 30,
+      "train_loss": 1.00425,
+      "val_loss": 0.79672
+    },
+    {
+      "epoch": 31,
+      "train_loss": 0.93927,
+      "val_loss": 0.79003
+    },
+    {
+      "epoch": 32,
+      "train_loss": 0.96466,
+      "val_loss": 0.77973
+    },
+    {
+      "epoch": 33,
+      "train_loss": 0.83377,
+      "val_loss": 0.77153
+    },
+    {
+      "epoch": 34,
+      "train_loss": 0.9321,
+      "val_loss": 0.77051
+    },
+    {
+      "epoch": 35,
+      "train_loss": 0.86228,
+      "val_loss": 0.76853
+    },
+    {
+      "epoch": 36,
+      "train_loss": 0.90106,
+      "val_loss": 0.76917
+    },
+    {
+      "epoch": 37,
+      "train_loss": 0.86834,
+      "val_loss": 0.77173
+    },
+    {
+      "epoch": 38,
+      "train_loss": 0.90857,
+      "val_loss": 0.76853
+    },
+    {
+      "epoch": 39,
+      "train_loss": 0.8059,
+      "val_loss": 0.75911
+    },
+    {
+      "epoch": 40,
+      "train_loss": 0.82635,
+      "val_loss": 0.75245
+    }
+  ],
+  "split": {
+    "train_count": 22,
+    "val_count": 5,
+    "test_count": 9
+  },
+  "predictions": {
+    "PARCEL_001": 4.24,
+    "PARCEL_002": 4.18,
+    "PARCEL_003": 4.0,
+    "PARCEL_004": 4.08,
+    "PARCEL_005": 3.98,
+    "PARCEL_006": 3.98,
+    "PARCEL_007": 4.6,
+    "PARCEL_008": 4.43,
+    "PARCEL_009": 3.99,
+    "PARCEL_010": 3.93,
+    "PARCEL_011": 3.83,
+    "PARCEL_012": 3.59,
+    "PARCEL_013": 4.61,
+    "PARCEL_014": 4.08,
+    "PARCEL_015": 3.96,
+    "PARCEL_016": 3.64,
+    "PARCEL_017": 3.68,
+    "PARCEL_018": 3.7,
+    "PARCEL_019": 4.44,
+    "PARCEL_020": 4.11,
+    "PARCEL_021": 4.17,
+    "PARCEL_022": 3.72,
+    "PARCEL_023": 3.8,
+    "PARCEL_024": 3.7,
+    "PARCEL_025": 3.95,
+    "PARCEL_026": 3.86,
+    "PARCEL_027": 3.67,
+    "PARCEL_028": 4.06,
+    "PARCEL_029": 3.76,
+    "PARCEL_030": 3.98,
+    "PARCEL_031": 3.67,
+    "PARCEL_032": 3.77,
+    "PARCEL_033": 3.96,
+    "PARCEL_034": 4.22,
+    "PARCEL_035": 4.32,
+    "PARCEL_036": 4.09
+  },
+  "save_dir": "models\\ablation_sar_features_only",
+  "provenance": "synthetic_demonstration"
+}

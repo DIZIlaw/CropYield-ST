@@ -1,0 +1,22 @@
+{
+  "dataset_name": "CropYield-ST Haryana, India (Karnal Rice-Wheat Belt) Field Dataset",
+  "description": "Multi-sensor Sentinel-1/2 time series and yield labels for 36 contiguous parcels",
+  "spatial_coverage": "29.6857 N, 76.9905 E (Haryana, India (Karnal Rice-Wheat Belt))",
+  "temporal_coverage": "2025-11-01 to 2026-04-06 (14 bi-weekly acquisition timesteps)",
+  "sensors": {
+    "optical": "Sentinel-2 MSI Level-2A (B2 Blue, B4 Red, B5 RedEdge, B8 NIR, B11 SWIR)",
+    "radar": "Sentinel-1 C-band SAR GRD (VV, VH dual polarization)"
+  },
+  "indices_included": [
+    "NDVI",
+    "EVI",
+    "NDRE",
+    "NDWI",
+    "SAR VV/VH Ratio",
+    "SAR RVI",
+    "SAR dB"
+  ],
+  "target_variable": "yield_tha (Crop yield in tonnes per hectare)",
+  "provenance": "synthetic_demonstration",
+  "disclaimer": "This sample dataset is calibrated for algorithm verification and faculty evaluation."
+}

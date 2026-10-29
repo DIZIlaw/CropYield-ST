@@ -1,0 +1,38 @@
+{
+  "model_type": "st_gnn",
+  "feature_set": "fusion",
+  "features": [
+    "ndvi",
+    "evi",
+    "ndre",
+    "ndwi",
+    "sar_vv_linear",
+    "sar_vh_linear",
+    "sar_vh_vv_ratio",
+    "sar_rvi",
+    "sar_vv_db",
+    "sar_vh_db"
+  ],
+  "y_mean": 4.073182106018066,
+  "y_std": 0.9613985882530213,
+  "conformal_q95": 1.1273598670959473,
+  "empirical_coverage_pct": 55.55555555555556,
+  "mean_interval_width": 2.2547197341918945,
+  "cal_size": 5,
+  "test_size": 9,
+  "is_statistically_validated": false,
+  "warnings": [
+    "Small-sample conformal calibration (m_cal=5, n_test=9). Finite-sample guarantee provides conservative interval (width=2.25 t/ha); asymptotic coverage guarantees require larger multi-region parcel sets (n >= 50)."
+  ],
+  "val_residuals": [
+    0.024093151092529297,
+    1.1273598670959473,
+    0.9742772579193115,
+    0.28284382820129395,
+    0.9966228008270264
+  ],
+  "val_sample_count": 5,
+  "provenance": "synthetic",
+  "model_version": "st_gnn_fusion_v1",
+  "timestamp": 1792433818
+}

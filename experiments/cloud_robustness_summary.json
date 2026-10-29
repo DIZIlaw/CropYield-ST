@@ -1,0 +1,34 @@
+{
+  "experiment_name": "Cloud Occlusion Robustness Analysis",
+  "description": "Compares performance degradation under severe cloud cover scenarios",
+  "data": [
+    {
+      "cloud_occlusion_pct": 0,
+      "optical_only_rmse": 1.0941,
+      "optical_only_r2": 0.1905,
+      "fusion_st_gnn_rmse": 1.0558,
+      "fusion_st_gnn_r2": 0.2462
+    },
+    {
+      "cloud_occlusion_pct": 25,
+      "optical_only_rmse": 1.1594,
+      "optical_only_r2": 0.091,
+      "fusion_st_gnn_rmse": 1.2658,
+      "fusion_st_gnn_r2": -0.0835
+    },
+    {
+      "cloud_occlusion_pct": 50,
+      "optical_only_rmse": 1.0785,
+      "optical_only_r2": 0.2133,
+      "fusion_st_gnn_rmse": 1.1049,
+      "fusion_st_gnn_r2": 0.1744
+    },
+    {
+      "cloud_occlusion_pct": 75,
+      "optical_only_rmse": 1.3679,
+      "optical_only_r2": -0.2654,
+      "fusion_st_gnn_rmse": 1.2898,
+      "fusion_st_gnn_r2": -0.125
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "experiment_id": "exp_st_gnn_optical_only_1792433815",
+  "model_type": "st_gnn",
+  "feature_set": "optical_only",
+  "features": [
+    "ndvi",
+    "evi",
+    "ndre",
+    "ndwi"
+  ],
+  "epochs": 30,
+  "duration_sec": 0.65,
+  "train_metrics": {
+    "n_samples": 22,
+    "rmse": 0.696,
+    "mae": 0.5853,
+    "r2": 0.476,
+    "mape_percent": 17.69,
+    "mean_actual": 4.073,
+    "mean_predicted": 4.227,
+    "residual_mean": 0.1542,
+    "residual_std": 0.6786,
+    "max_overprediction": 1.3464,
+    "max_underprediction": -0.822,
+    "residuals": [
+      0.6194,
+      -0.822,
+      -0.4828,
+      -0.7213,
+      1.2042,
+      -0.2026,
+      0.0047,
+      0.1304,
+      -0.093,
+      0.394,
+      1.3464,
+      -0.021,
+      0.8373,
+      0.5743,
+      -0.7514,
+      -0.7417,
+      -0.4239,
+      0.8384,
+      0.4112,
+      1.3078,
+      -0.482,
+      0.4668
+    ],
+    "y_true": [
+      4.4,
+      5.82,
+      4.64,
+      5.14,
+      2.76,
+      4.88,
+      4.86,
+      4.54,
+      4.1,
+      4.09,
+      2.32,
+      4.07,
+      2.68,
+      4.12,
+      4.72,
+      4.52,
+      4.61,
+      2.51,
+      4.32,
+      2.07,
+      4.32,
+      4.12
+    ],
+    "y_pred": [
+      5.02,
+      5.0,
+      4.16,
+      4.42,
+      3.96,
+      4.68,
+      4.86,
+      4.67,
+      4.01,
+      4.48,
+      3.67,
+      4.05,
+      3.52,
+      4.69,
+      3.97,
+      3.78,
+      4.19,
+      3.35,
+      4.73,
+      3.38,
+      3.84,
+      4.59
+    ]
+  },
+  "val_metrics": {
+    "n_samples": 5,
+    "rmse": 0.7719,
+    "mae": 0.5944,
+    "r2": 0.0293,
+    "mape_percent": 19.09,
+    "mean_actual": 3.85,
+    "mean_predicted": 3.934,
+    "residual_mean": 0.0836,
+    "residual_std": 0.7674,
+    "max_overprediction": 1.4445,
+    "max_underprediction": -0.8286,
+    "residuals": [
+      -0.371,
+      -0.8286,
+      -0.0776,
+      0.2506,
+      1.4445
+    ],
+    "y_true": [
+      4.31,
+      4.33,
+      4.61,
+      3.55,
+      2.45
+    ],
+    "y_pred": [
+      3.94,
+      3.5,
+      4.53,
+      3.8,
+      3.89
+    ]
+  },
+  "test_metrics": {
+    "n_samples": 9,
+    "rmse": 1.0785,
+    "mae": 0.8606,
+    "r2": 0.2133,
+    "mape_percent": 32.1,
+    "mean_actual": 3.803,
+    "mean_predicted": 4.117,
+    "residual_mean": 0.314,
+    "residual_std": 1.0318,
+    "max_overprediction": 2.3023,
+    "max_underprediction": -0.7954,
+    "residuals": [
+      1.1467,
+      0.0516,
+      -0.7954,
+      -0.257,
+      0.3603,
+      2.3023,
+      -0.7279,
+      -0.6794,
+      1.4252
+    ],
+    "y_true": [
+      2.15,
+      4.26,
+      4.79,
+      4.38,
+      4.08,
+      1.99,
+      5.52,
+      4.67,
+      2.39
+    ],
+    "y_pred": [
+      3.3,
+      4.31,
+      3.99,
+      4.12,
+      4.44,
+      4.29,
+      4.79,
+      3.99,
+      3.82
+    ]
+  },
+  "conformal_uncertainty": {
+    "cal_residuals_count": 5,
+    "test_samples_count": 9,
+    "conformal_q95": 1.444,
+    "empirical_test_coverage_pct": 88.9,
+    "mean_interval_width": 2.89,
+    "is_statistically_validated": false,
+    "warnings": [
+      "Small-sample conformal calibration (m_cal=5, n_test=9). Finite-sample guarantee provides conservative interval (width=2.89 t/ha); asymptotic coverage guarantees require larger multi-region parcel sets (n >= 50)."
+    ]
+  },
+  "loss_history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.02512,
+      "val_loss": 0.87544
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.1051,
+      "val_loss": 0.65096
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.03002,
+      "val_loss": 0.65805
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.97717,
+      "val_loss": 0.7022
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.97735,
+      "val_loss": 0.73054
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.9946,
+      "val_loss": 0.68956
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.97382,
+      "val_loss": 0.65731
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.93789,
+      "val_loss": 0.63416
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.92456,
+      "val_loss": 0.66433
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.91111,
+      "val_loss": 0.6375
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.87935,
+      "val_loss": 0.57046
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.82511,
+      "val_loss": 0.55698
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.83091,
+      "val_loss": 0.53075
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.82563,
+      "val_loss": 0.91134
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.86634,
+      "val_loss": 0.99242
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.81581,
+      "val_loss": 0.65727
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.72979,
+      "val_loss": 0.59511
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.77281,
+      "val_loss": 0.61055
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.5936,
+      "val_loss": 0.81834
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.62453,
+      "val_loss": 0.86309
+    },
+    {
+      "epoch": 21,
+      "train_loss": 0.65367,
+      "val_loss": 0.64472
+    },
+    {
+      "epoch": 22,
+      "train_loss": 0.54556,
+      "val_loss": 0.72094
+    },
+    {
+      "epoch": 23,
+      "train_loss": 0.65037,
+      "val_loss": 0.76721
+    },
+    {
+      "epoch": 24,
+      "train_loss": 0.57539,
+      "val_loss": 0.64647
+    },
+    {
+      "epoch": 25,
+      "train_loss": 0.42499,
+      "val_loss": 0.80431
+    },
+    {
+      "epoch": 26,
+      "train_loss": 0.43723,
+      "val_loss": 1.01795
+    },
+    {
+      "epoch": 27,
+      "train_loss": 0.44017,
+      "val_loss": 0.98717
+    },
+    {
+      "epoch": 28,
+      "train_loss": 0.28792,
+      "val_loss": 0.75874
+    },
+    {
+      "epoch": 29,
+      "train_loss": 0.30132,
+      "val_loss": 0.67134
+    },
+    {
+      "epoch": 30,
+      "train_loss": 0.26679,
+      "val_loss": 0.67637
+    }
+  ],
+  "split": {
+    "train_count": 22,
+    "val_count": 5,
+    "test_count": 9
+  },
+  "predictions": {
+    "PARCEL_001": 5.02,
+    "PARCEL_002": 4.16,
+    "PARCEL_003": 4.86,
+    "PARCEL_004": 3.52,
+    "PARCEL_005": 4.73,
+    "PARCEL_006": 4.53,
+    "PARCEL_007": 5.0,
+    "PARCEL_008": 3.96,
+    "PARCEL_009": 4.48,
+    "PARCEL_010": 3.78,
+    "PARCEL_011": 4.59,
+    "PARCEL_012": 3.3,
+    "PARCEL_013": 4.42,
+    "PARCEL_014": 4.67,
+    "PARCEL_015": 4.69,
+    "PARCEL_016": 3.38,
+    "PARCEL_017": 3.8,
+    "PARCEL_018": 4.12,
+    "PARCEL_019": 4.68,
+    "PARCEL_020": 3.67,
+    "PARCEL_021": 4.19,
+    "PARCEL_022": 3.94,
+    "PARCEL_023": 4.31,
+    "PARCEL_024": 4.29,
+    "PARCEL_025": 4.01,
+    "PARCEL_026": 3.97,
+    "PARCEL_027": 3.84,
+    "PARCEL_028": 3.89,
+    "PARCEL_029": 4.44,
+    "PARCEL_030": 3.99,
+    "PARCEL_031": 4.05,
+    "PARCEL_032": 3.35,
+    "PARCEL_033": 3.5,
+    "PARCEL_034": 3.99,
+    "PARCEL_035": 4.79,
+    "PARCEL_036": 3.82
+  },
+  "save_dir": "models\\exp_st_gnn_optical_only_1792433815",
+  "provenance": "synthetic_demonstration"
+}
