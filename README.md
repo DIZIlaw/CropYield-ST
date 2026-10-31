@@ -1,3 +1,13 @@
+---
+title: CropYield-ST
+emoji: 🌾
+colorFrom: green
+colorTo: emerald
+sdk: docker
+app_port: 8000
+pinned: false
+---
+
 # CropYield-ST: AI-Based Hyperlocal Crop Yield Forecasting Using Satellite Fusion and Spatio-Temporal Graph Neural Networks
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -182,6 +192,37 @@ The dashboard automatically launches at `http://localhost:8000`.
 ```bash
 python run_app.py
 ```
+
+---
+
+## 🌐 Free Cloud Hosting Deployment (100% Free & Fully Functional)
+
+CropYield-ST includes complete configuration files for free cloud hosting providers:
+
+### 1. Hugging Face Spaces (Recommended for Full PyTorch & ST-GNN AI — 100% Free)
+Hugging Face Spaces provides **16 GB RAM**, 2 vCPUs, and 50 GB storage for free, perfect for deep learning and geospatial models:
+1. Go to [huggingface.co/new-space](https://huggingface.co/new-space).
+2. Name your space (e.g., `CropYield-ST`), set license to **MIT**, and select **Docker** as Space SDK.
+3. Choose **Blank** template and click **Create Space**.
+4. In your terminal, link your repository and push:
+   ```bash
+   git remote add hf https://huggingface.co/spaces/<YOUR_HF_USERNAME>/CropYield-ST
+   git push hf main
+   ```
+*(Hugging Face will automatically build the `Dockerfile` and serve both the React frontend and PyTorch backend on a public `https://<space-name>.hf.space` URL with full inference).*
+
+### 2. Render.com (Free Web Service via GitHub)
+1. Go to [render.com](https://render.com) and log in with GitHub.
+2. Click **New +** &rarr; **Blueprint**.
+3. Select your repository `DIZIlaw/CropYield-ST`.
+4. Render automatically detects [`render.yaml`](file:///C:/Users/welco/.gemini/antigravity/scratch/crop-yield-st/render.yaml) and deploys the unified Docker container for free.
+
+### 3. Vercel (Frontend Global CDN)
+If deploying the frontend on Vercel:
+1. Import repository `DIZIlaw/CropYield-ST` on [vercel.com/new](https://vercel.com/new).
+2. Root directory: `./` (or `frontend`).
+3. Vercel automatically detects [`vercel.json`](file:///C:/Users/welco/.gemini/antigravity/scratch/crop-yield-st/vercel.json) and builds the Vite React dashboard.
+4. Set Environment Variable `VITE_API_BASE` to your deployed backend URL (from Hugging Face or Render).
 
 ---
 

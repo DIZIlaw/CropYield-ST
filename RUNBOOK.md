@@ -29,6 +29,28 @@ The full application (React UI + PyTorch ST-GNN + FastAPI API) will automaticall
 
 ---
 
+## ☁️ Free Cloud Hosting Deployment (Zero Local Installation)
+
+1. **Hugging Face Spaces (Recommended for Full PyTorch AI with 16GB RAM):**
+   - Create a new Space at [huggingface.co/new-space](https://huggingface.co/new-space) (SDK: Docker, Blank template).
+   - In terminal:
+     ```bash
+     git remote add hf https://huggingface.co/spaces/<YOUR_HF_USERNAME>/CropYield-ST
+     git push hf main
+     ```
+   - Hugging Face automatically builds the Docker container and serves the full app at `https://<space-name>.hf.space`.
+
+2. **Render.com (Free Web Service via GitHub Blueprint):**
+   - In [render.com](https://render.com), click **New +** &rarr; **Blueprint** &rarr; choose `DIZIlaw/CropYield-ST`.
+   - Render deploys from `render.yaml` automatically.
+
+3. **Vercel (Frontend Global CDN):**
+   - Connect repository `DIZIlaw/CropYield-ST` to [vercel.com](https://vercel.com).
+   - `vercel.json` automatically builds the Vite frontend and enables client-side routing.
+   - Point `VITE_API_BASE` to your hosted backend URL.
+
+---
+
 ## 1. Prerequisites & Environment Setup
 
 - **Python**: Version 3.10+ recommended.

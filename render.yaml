@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: cropyield-st
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: HOST
+        value: 0.0.0.0
