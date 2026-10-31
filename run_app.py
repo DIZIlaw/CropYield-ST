@@ -43,9 +43,11 @@ def check_and_prepare_data():
 
 
 def main():
-    host = os.environ.get("HOST", "127.0.0.1")
+    # In cloud environments (Render, Docker, Hugging Face), bind to 0.0.0.0
+    is_cloud = os.environ.get("RENDER") or os.environ.get("HOST") == "0.0.0.0" or os.path.exists("/.dockerenv")
+    host = os.environ.get("HOST", "0.0.0.0" if is_cloud else "127.0.0.1")
     port = int(os.environ.get("PORT", "8000"))
-    app_url = f"http://{host if host != '0.0.0.0' else 'localhost'}:{port}"
+    app_url = f"http://{'localhost' if host in ('0.0.0.0', '127.0.0.1') else host}:{port}"
 
     print("=" * 72)
     print("  CropYield-ST: Hyperlocal Crop Yield Forecasting Dashboard")
@@ -55,6 +57,7 @@ def main():
     print(f"[*] Project root : {PROJECT_ROOT}")
     print(f"[*] System OS    : {sys.platform}")
     print(f"[*] Python       : {sys.version.split()[0]}")
+    print(f"[*] Host/Port    : {host}:{port}")
     print("[*] Initializing unified server (React Frontend + FastAPI REST API)...")
 
     # Verify sample dataset
@@ -69,12 +72,13 @@ def main():
         print("[!] Pre-compiled frontend not found in frontend/dist. API will run in headless mode.")
         print("    Run 'npm run build' inside frontend/ to compile the React dashboard.")
 
-    print(f"\n[>>>] Starting CropYield-ST on {app_url}")
+    print(f"\n[>>>] Starting CropYield-ST on {host}:{port}")
     print(f"[>>>] Interactive API Docs : {app_url}/docs")
     print("[>>>] Press Ctrl+C in this terminal to shut down the server.\n")
 
-    # Open browser in a background thread
-    threading.Thread(target=open_browser, args=(app_url, 1.8), daemon=True).start()
+    # Open browser only in local interactive sessions, not in cloud containers
+    if not is_cloud and host != "0.0.0.0":
+        threading.Thread(target=open_browser, args=(app_url, 1.8), daemon=True).start()
 
     # Run uvicorn web server
     try:
@@ -84,7 +88,8 @@ def main():
         print("\n[*] CropYield-ST server stopped gracefully. Goodbye!")
     except Exception as e:
         print(f"\n[!] Server error: {e}")
-        input("Press Enter to exit...")
+        if not is_cloud:
+            input("Press Enter to exit...")
 
 
 if __name__ == "__main__":
